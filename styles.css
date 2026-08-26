@@ -8,7 +8,7 @@
    Меняй ТОЛЬКО их, если лицо нужно чуть сдвинуть. Больше ничего трогать не надо.
    ========================================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:wght@500;600;700&display=swap');
 
 :root{
   --ink:#211f26;
@@ -21,7 +21,7 @@
   --accent:#5b3f9e;         /* уточнённый фиолетовый акцент */
   --accent-deep:#3e2a73;
 
-  --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --serif:'Lora', Georgia, 'Times New Roman', serif;
   --sans:'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 
   --header:74px;
@@ -156,7 +156,7 @@ a{color:var(--accent);font-weight:600;text-decoration:none}
   font-size:clamp(40px, 6.2vw, 74px);line-height:1.02;letter-spacing:-.015em;
   margin:0 0 28px;text-wrap:balance;
 }
-.hero h1 em{font-style:italic;color:var(--accent)}
+.hero h1 em{font-style:normal;color:var(--accent)}
 .lead{font-size:clamp(18px,2.1vw,22px);color:var(--ink);max-width:34em;margin:0}
 .lead + .lead{margin-top:14px}
 
@@ -170,21 +170,17 @@ a{color:var(--accent);font-weight:600;text-decoration:none}
 }
 .manifesto{font-weight:600;color:var(--accent)}
 .intro .manifesto{
-  font-family:var(--serif);font-style:italic;font-weight:600;color:var(--ink);
-  font-size:clamp(24px,3.4vw,34px);line-height:1.35;letter-spacing:-.01em;
-  max-width:20em;text-align:center;margin:0 0 clamp(48px,7vh,72px);
+  font-family:var(--serif);font-weight:600;color:var(--ink);
+  font-size:clamp(23px,3.2vw,33px);line-height:1.4;letter-spacing:-.005em;
+  max-width:21em;text-align:center;margin:0 0 clamp(48px,7vh,72px);
 }
 .intro .manifesto b{color:var(--accent);font-weight:700}
 
 .phone-fan{position:relative;width:100%;max-width:780px;height:clamp(370px,64vw,540px);margin-inline:auto}
 .phone{
   position:absolute;width:clamp(150px,42vw,268px);aspect-ratio:265/540;
-  padding:8px;background:#141416;border:1px solid #33333a;border-radius:34px;
+  padding:4px;background:#18181c;border:1px solid #34343c;border-radius:30px;
   box-shadow:0 30px 70px rgba(28,24,50,.30);overflow:hidden;
-}
-.phone::before{ /* «челка» */
-  content:"";position:absolute;z-index:2;left:50%;top:9px;transform:translateX(-50%);
-  width:34%;height:12px;border-radius:0 0 12px 12px;background:#141416;
 }
 .phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:26px}
 .phone:nth-child(1){left:2%;  top:6%;  transform:rotate(-8deg)}
@@ -217,9 +213,15 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
 }
 .project:last-child{margin-bottom:0}
 .project.reverse .visual{order:2}
-.visual{overflow:hidden;border-radius:14px}
-.visual .shot{transition:transform .5s ease}
-.project:hover .visual .shot{transform:scale(1.02)}
+.visual{border-radius:14px}
+.shot{transition:box-shadow .3s ease, transform .3s ease}
+.project:hover .shot,
+.duo article:hover .shot,
+.history-main:hover .shot,
+.history-duo article:hover .shot{
+  transform:translateY(-4px);
+  box-shadow:0 28px 62px rgba(33,31,38,.18), 0 4px 10px rgba(33,31,38,.07);
+}
 .project .copy .num{
   font-family:var(--serif);font-size:15px;font-weight:600;color:var(--accent);
   letter-spacing:.05em;display:block;margin-bottom:10px;
@@ -265,8 +267,8 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
 .final h2{font-size:clamp(38px,5.5vw,64px);line-height:1.03;letter-spacing:-.02em;margin:0 0 26px}
 .final p{font-size:clamp(18px,2.1vw,21px);color:#332f38;margin:0 0 16px}
 .final .manifesto{
-  font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,30px);
-  line-height:1.35;color:var(--ink);max-width:20em;
+  font-family:var(--serif);font-weight:600;font-size:clamp(22px,3vw,30px);
+  line-height:1.4;color:var(--ink);max-width:21em;
 }
 .final .manifesto b{color:var(--accent);font-weight:700}
 
@@ -274,10 +276,8 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
 footer{
   border-top:1px solid var(--line);
   padding-block:clamp(28px,5vh,48px);
-  font-size:14px;color:var(--muted);
-  display:flex;gap:22px;flex-wrap:wrap;align-items:center;
+  font-size:14px;color:var(--muted);letter-spacing:.01em;
 }
-footer .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.6}
 
 /* ==================================================================
    ПЛАНШЕТ / ТЕЛЕФОН  —  до 860px
@@ -291,21 +291,24 @@ footer .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opaci
   .hero{
     display:block;
     min-height:auto;
-    padding-top:calc(var(--photo-h, 56svh) + clamp(26px,5vh,40px));
-    padding-bottom:clamp(36px,6vh,56px);
+    /* текст стартует выше — заходит в уже растворённую нижнюю часть фото;
+       положение самого растворения (градиента) при этом не меняется */
+    padding-top:calc(var(--header) + 44svh);
+    padding-bottom:clamp(32px,5vh,52px);
   }
-  /* фото — полноширинная полоса сверху, без белых полос по краям */
+  /* фото — полоса во всю ширину, начинается ПОД шапкой (голова не под меню) */
   .hero-photo{
-    --photo-h:56svh;
-    top:0;left:50%;right:auto;transform:translateX(-50%);
+    --photo-h:58svh;
+    top:var(--header);left:50%;right:auto;transform:translateX(-50%);
     width:100vw;height:var(--photo-h);bottom:auto;
   }
   .hero-photo img{object-position:var(--hero-x-m) var(--hero-y-m)}
   .hero-photo::after{
     background:linear-gradient(180deg,
-      rgba(var(--paper-rgb),0) 46%,
-      rgba(var(--paper-rgb),.65) 78%,
-      var(--paper) 100%);
+      rgba(var(--paper-rgb),0) 42%,
+      rgba(var(--paper-rgb),.5) 66%,
+      rgba(var(--paper-rgb),.9) 84%,
+      var(--paper) 94%);
   }
   .hero-copy{width:100%}
   .hero h1{font-size:clamp(34px,8.5vw,46px)}
@@ -325,6 +328,4 @@ footer .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opaci
   .phone-fan{height:clamp(320px,84vw,420px)}
   .name{font-size:15px}
   .site-menu{right:16px;width:calc(100vw - 32px);max-height:calc(100svh - var(--header) - 20px);overflow:auto}
-  footer{gap:14px}
-  footer .dot{display:none}
 }
