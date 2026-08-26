@@ -3,9 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Дмитрий Староста — проекты</title>
-  <meta name="description" content="Сайты и цифровые проекты Дмитрия Старосты.">
-  <link rel="stylesheet" href="styles.css?v=20260826-1400">
+  <title>Проекты Дмитрия Старосты — сайты для артистов и творческих проектов</title>
+  <meta name="description" content="Сайты, которые Дмитрий Староста создаёт и годами поддерживает для артистов и творческих проектов: Bionica Show, Елена Басова, МосКостюмер, Леонид Агутин, GoGoDance, Starosta.ru и другие.">
+  <meta name="author" content="Дмитрий Староста">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f6f3ec">
+  <!-- Абсолютные адреса на текущий домен. При переезде заменить базовый адрес. -->
+  <link rel="canonical" href="https://dmitrystarosta.github.io/projects/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Проекты Дмитрия Старосты">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="https://dmitrystarosta.github.io/projects/">
+  <meta property="og:title" content="Проекты Дмитрия Старосты">
+  <meta property="og:description" content="Сайты, выросшие из людей и проектов, с которыми я работаю: артисты, театр, костюмы, приложения.">
+  <meta property="og:image" content="https://dmitrystarosta.github.io/projects/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Проекты Дмитрия Старосты">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Проекты Дмитрия Старосты">
+  <meta name="twitter:description" content="Сайты, выросшие из людей и проектов, с которыми я работаю.">
+  <meta name="twitter:image" content="https://dmitrystarosta.github.io/projects/images/og.jpg">
+
+  <link rel="stylesheet" href="styles.css?v=20260826-1600">
+
+  <!-- Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dmitrystarosta.github.io/projects/#website",
+        "url": "https://dmitrystarosta.github.io/projects/",
+        "name": "Проекты Дмитрия Старосты",
+        "inLanguage": "ru",
+        "description": "Сайты, которые Дмитрий Староста создаёт и поддерживает для артистов и творческих проектов."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dmitrystarosta.github.io/projects/#person",
+        "name": "Дмитрий Староста",
+        "url": "https://dmitrystarosta.github.io/projects/",
+        "image": "https://dmitrystarosta.github.io/projects/images/og.jpg",
+        "description": "Создаёт и годами поддерживает сайты для артистов и творческих проектов."
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://dmitrystarosta.github.io/projects/#webpage",
+        "url": "https://dmitrystarosta.github.io/projects/",
+        "name": "Проекты Дмитрия Старосты",
+        "inLanguage": "ru",
+        "isPartOf": { "@id": "https://dmitrystarosta.github.io/projects/#website" },
+        "about": { "@id": "https://dmitrystarosta.github.io/projects/#person" },
+        "primaryImageOfPage": "https://dmitrystarosta.github.io/projects/images/og.jpg"
+      },
+      {
+        "@type": "ItemList",
+        "name": "Проекты",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Bionica Show", "url": "https://bionicashow.ru" },
+          { "@type": "ListItem", "position": 2, "name": "Елена Басова", "url": "https://elenabasova.ru" },
+          { "@type": "ListItem", "position": 3, "name": "МосКостюмер", "url": "https://moskostumer.ru" },
+          { "@type": "ListItem", "position": 4, "name": "Белый список?", "url": "https://belyjspisok.ru" },
+          { "@type": "ListItem", "position": 5, "name": "HeadInspect", "url": "https://headinspect.ru" },
+          { "@type": "ListItem", "position": 6, "name": "Леонид Агутин", "url": "https://leonidagutin.ru" },
+          { "@type": "ListItem", "position": 7, "name": "GoGoDance.ru", "url": "https://gogodance.ru" },
+          { "@type": "ListItem", "position": 8, "name": "Starosta.ru", "url": "https://starosta.ru" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -16,7 +89,7 @@
     <span></span><span></span><span></span>
   </button>
   <nav class="site-menu" id="site-menu" aria-label="Проекты">
-    <a href="#projects">Все проекты</a>
+    <a href="#manifesto">Все проекты</a>
     <a href="#bionica">Bionica Show</a>
     <a href="#elenabasova">Елена Басова</a>
     <a href="#moskostumer">МосКостюмер</a>
@@ -45,7 +118,7 @@
   </section>
 
   <!-- ===================== МАНИФЕСТ + ТРИ ТЕЛЕФОНА ==================== -->
-  <section class="intro wrap">
+  <section id="manifesto" class="intro wrap">
     <p class="manifesto">Я не делаю сайты на заказ. Я создаю и поддерживаю их для людей и проектов, которых знаю лично и ценю.</p>
     <div class="phone-fan" aria-label="Три проекта на экранах смартфонов">
       <div class="phone"><img src="images/1000093189.jpg" alt="Starosta.ru"></div>
@@ -159,29 +232,18 @@
 </main>
 
 <footer class="wrap">
-  © 2000–2026 · Дмитрий Староста · Москва
+  © 2000–2026 · Дмитрий Староста · Москва · <a href="privacy/">Политика конфиденциальности</a>
 </footer>
 
-<script>
-(() => {
-  const btn = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.site-menu');
-  const scrim = document.querySelector('.scrim');
-  if (!btn || !menu) return;
+<!-- ===================== УВЕДОМЛЕНИЕ О ВЕБ-АНАЛИТИКЕ ================= -->
+<div class="cookie" role="dialog" aria-label="Уведомление о веб-аналитике" aria-live="polite">
+  <p class="cookie-text">Сайт использует Яндекс.Метрику для анализа посещаемости. Аналитика подключается только после согласия.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-solid cc-accept">Принять</button>
+    <a class="cookie-more" href="privacy/">Подробнее</a>
+  </div>
+</div>
 
-  const setOpen = (open) => {
-    btn.setAttribute('aria-expanded', String(open));
-    btn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
-    menu.classList.toggle('open', open);
-    if (scrim) { scrim.hidden = false; scrim.classList.toggle('open', open); }
-    document.body.style.overflow = open ? 'hidden' : '';
-  };
-
-  btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
-  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
-  if (scrim) scrim.addEventListener('click', () => setOpen(false));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
-})();
-</script>
+<script src="script.js?v=20260826-1600"></script>
 </body>
 </html>
