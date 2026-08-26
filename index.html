@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Дмитрий Староста — проекты</title>
   <meta name="description" content="Сайты и цифровые проекты Дмитрия Старосты.">
-  <link rel="stylesheet" href="styles.css?v=20260826-1130">
+  <link rel="stylesheet" href="styles.css?v=20260826-1400">
 </head>
 <body>
 
@@ -17,15 +17,15 @@
   </button>
   <nav class="site-menu" id="site-menu" aria-label="Проекты">
     <a href="#projects">Все проекты</a>
-    <a href="https://bionicashow.ru">Bionica Show ↗</a>
-    <a href="https://elenabasova.ru">Елена Басова ↗</a>
-    <a href="https://moskostumer.ru">МосКостюмер ↗</a>
-    <a href="https://belyjspisok.ru">Белый список? ↗</a>
-    <a href="https://headinspect.ru">HeadInspect ↗</a>
-    <a href="https://leonidagutin.ru">Леонид Агутин ↗</a>
-    <a href="https://gogodance.ru">GoGoDance.ru ↗</a>
-    <a href="https://starosta.ru" aria-current="page">Starosta.ru ↗</a>
-    <a href="#about">Обо мне</a>
+    <a href="#bionica">Bionica Show</a>
+    <a href="#elenabasova">Елена Басова</a>
+    <a href="#moskostumer">МосКостюмер</a>
+    <a href="#belyjspisok">Белый список?</a>
+    <a href="#headinspect">HeadInspect</a>
+    <a href="#agutin">Леонид Агутин</a>
+    <a href="#gogodance">GoGoDance.ru</a>
+    <a href="#starosta">Starosta.ru</a>
+    <a href="#why">Зачем всё это</a>
   </nav>
 </header>
 <div class="scrim" hidden></div>
@@ -48,9 +48,9 @@
   <section class="intro wrap">
     <p class="manifesto">Я не делаю сайты на заказ. Я создаю и поддерживаю их для людей и проектов, которых знаю лично и ценю.</p>
     <div class="phone-fan" aria-label="Три проекта на экранах смартфонов">
+      <div class="phone"><img src="images/1000093189.jpg" alt="Starosta.ru"></div>
+      <div class="phone"><img src="images/1000093182.jpg" alt="Леонид Агутин"></div>
       <div class="phone"><img src="images/1000093185.jpg" alt="Bionica Show"></div>
-      <div class="phone"><img src="images/1000093186.jpg" alt="Театр Елены Басовой"></div>
-      <div class="phone"><img src="images/1000093184.jpg" alt="Белый список?"></div>
     </div>
   </section>
 
@@ -58,10 +58,10 @@
   <section id="projects" class="section wrap">
     <p class="section-label">Проекты</p>
 
-    <article class="project">
+    <article id="bionica" class="project">
       <div class="visual"><img class="shot" src="images/1000093185-hero.webp" alt="Сайт Bionica Show"></div>
       <div class="copy">
-        <span class="num" aria-hidden="true"></span>
+        <p class="year">С 2006</p>
         <h2>Bionica Show</h2>
         <p>Проект Фёдора Додонова и Хаика Симоняна — талантливых дизайнеров, создающих уникальные костюмы для Bionica Show, постановок Большого театра, Театра Оперетты и других проектов.</p>
         <p>Сайт полностью переработан, чтобы его визуальный язык соответствовал самому шоу.</p>
@@ -70,10 +70,10 @@
       </div>
     </article>
 
-    <article class="project reverse">
+    <article id="elenabasova" class="project reverse">
       <div class="visual"><img class="shot" src="images/1000093186-hero.webp" alt="Сайт Елены Басовой"></div>
       <div class="copy">
-        <span class="num" aria-hidden="true"></span>
+        <p class="year">С 2010</p>
         <h2>Елена Басова</h2>
         <p>Художник-модельер, создавшая собственный узнаваемый мир мимов и ходулистов. Её костюмы и образы невозможно спутать с другими — и их много лет пытаются копировать.</p>
         <p>Сайт заново собран вокруг самих работ и личности художника.</p>
@@ -82,10 +82,10 @@
       </div>
     </article>
 
-    <article class="project">
+    <article id="moskostumer" class="project">
       <div class="visual"><img class="shot" src="images/1000093183-hero.webp" alt="Сайт МосКостюмер"></div>
       <div class="copy">
-        <span class="num" aria-hidden="true"></span>
+        <p class="year">С 2012</p>
         <h2>МосКостюмер</h2>
         <p>Проект вырос из хобби. Костюмы, создававшиеся для клубных вечеринок в 2000-х, сохранились и со временем стали основой небольшой костюмерной и прокатного бизнеса.</p>
         <p class="tags">Редизайн · каталог · онлайн-договор · SEO</p>
@@ -98,14 +98,16 @@
   <section class="section wrap">
     <p class="section-label">Когда нужного инструмента не было</p>
     <div class="duo">
-      <article>
+      <article id="belyjspisok">
         <img class="shot" src="images/1000093184-hero.webp" alt="Белый список?">
+        <p class="year">С 2026</p>
         <h2>Белый список?</h2>
         <p>Приложение появилось из бытовой задачи — помочь друзьям и родственникам понять, что происходит с мобильным интернетом. Теперь его скачивают тысячи людей.</p>
         <a class="link-out" href="https://belyjspisok.ru">belyjspisok.ru ↗</a>
       </article>
-      <article>
+      <article id="headinspect">
         <img class="shot" src="images/1000093188-hero.webp" alt="HeadInspect">
+        <p class="year">С 2026</p>
         <h2>HeadInspect</h2>
         <p>Родился во время работы над редизайном этих сайтов: проверять одни и те же технические вещи вручную стало слишком долго.</p>
         <a class="link-out" href="https://headinspect.ru">headinspect.ru ↗</a>
@@ -117,10 +119,10 @@
   <section class="section wrap">
     <p class="section-label">Проекты с историей</p>
 
-    <article class="history-main">
+    <article id="agutin" class="history-main">
       <div class="visual"><img class="shot" src="images/1000093182-hero.webp" alt="Сайт Леонида Агутина"></div>
       <div>
-        <p class="since">С 2013 года</p>
+        <p class="year">С 2013</p>
         <h2>Леонид Агутин</h2>
         <p>Сайт Леонида Агутина вручную написала Елена Митькина. В 2013 году мне выпала честь продолжить эту работу: поддерживать сайт, наполнять его, следить за актуальностью информации и вести социальные сети музыканта.</p>
         <p>За годы сайт фактически стал энциклопедией творчества Леонида Агутина — здесь важнее полнота архива и достоверность информации, чем погоня за очередным веб-трендом.</p>
@@ -129,25 +131,26 @@
     </article>
 
     <div class="history-duo">
-      <article>
+      <article id="gogodance">
         <img class="shot" src="images/1000093187-hero.webp" alt="GoGoDance.ru">
+        <p class="year">С 2012</p>
         <h2>GoGoDance.ru</h2>
         <p>Сайт агентства клубных танцоров — направления, которое бурно развивалось в 2000-е и остаётся востребованным сегодня. Его новое поколение ещё впереди.</p>
         <a class="link-out" href="https://gogodance.ru">gogodance.ru ↗</a>
       </article>
-      <article>
+      <article id="starosta">
         <img class="shot" src="images/1000093189-hero.webp" alt="Starosta.ru">
+        <p class="year">С 2000</p>
         <h2>Starosta.ru</h2>
         <p>В начале 2000-х — небольшой ресурс об артистах для клубов и мероприятий. Позже он превратился в каталог, где коллективы могли самостоятельно регистрироваться и продвигать себя.</p>
-        <span class="badge">Начало 2000-х → работает в 2026</span>
         <a class="link-out" href="https://starosta.ru">starosta.ru ↗</a>
       </article>
     </div>
   </section>
 
   <!-- ============================== ФИНАЛ ============================= -->
-  <section id="about" class="section wrap final">
-    <p class="section-label">Почему всё это</p>
+  <section id="why" class="section wrap final">
+    <p class="section-label">Зачем всё это</p>
     <h2>Всё началось<br>с творческих людей</h2>
     <p>Эти проекты очень разные. Одни существуют больше двадцати лет, другие появились совсем недавно. Какие-то постоянно меняются, а какие-то ценны именно своей историей.</p>
     <p class="manifesto">Но почти все они выросли из любви к творческим людям — а <b>талантливых людей в России очень много.</b></p>
