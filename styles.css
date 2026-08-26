@@ -31,7 +31,7 @@
   --gap-proj:clamp(52px, 8vh, 92px);   /* единый вертикальный интервал между проектами */
 
   /* положение лица на фото в Hero */
-  --hero-x:50%;   --hero-y:42%;    /* десктоп */
+  --hero-x:50%;   --hero-y:10%;    /* десктоп: кадр прижат к верху — не зависит от высоты экрана */
   --hero-x-m:50%; --hero-y-m:14%;  /* телефон */
 }
 
@@ -121,7 +121,7 @@ a{color:var(--accent);font-weight:600;text-decoration:none}
 
 /* фотослой */
 .hero-photo{
-  position:absolute;z-index:-2;top:0;bottom:0;right:calc(var(--pad) * -1);
+  position:absolute;z-index:-2;top:var(--header);bottom:0;right:calc(var(--pad) * -1);
   width:52%;overflow:hidden;pointer-events:none;
 }
 .hero-photo img{
