@@ -4,3 +4,50 @@
 
 .mobile-br{display:none}
 @media(max-width:768px){.mobile-br{display:initial}}
+
+/* 2026-08-26 mobile stabilization */
+@media (max-width: 760px){
+  .hero-photo{
+    left:0 !important;
+    right:0 !important;
+    top:0 !important;
+    bottom:0 !important;
+    width:100% !important;
+    height:auto !important;
+    overflow:hidden !important;
+  }
+  .hero-photo img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    object-fit:cover !important;
+    object-position:5% 20% !important;
+  }
+
+  /* Center the mobile menu as a navigation panel, not a left-aligned list. */
+  .mobile-menu{
+    text-align:center !important;
+  }
+  .mobile-menu nav,
+  .mobile-menu .menu-nav,
+  .mobile-menu ul{
+    width:100% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .mobile-menu li{
+    list-style:none !important;
+    text-align:center !important;
+  }
+  .mobile-menu a{
+    display:block !important;
+    width:100% !important;
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
