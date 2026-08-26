@@ -6,10 +6,9 @@
   'use strict';
 
   /* ---------- Яндекс.Метрика ----------
-     ВСТАВЬ НОМЕР СЧЁТЧИКА в METRIKA_ID (например 12345678).
-     Пока стоит 0 — Метрика не подключается вообще, ошибок нет.
-     Код загружается ТОЛЬКО после нажатия «Принять».                          */
-  var METRIKA_ID = 0;
+     Счётчик грузится ТОЛЬКО после нажатия «Принять» (см. политику конфиденциальности).
+     ID и параметры — как в коде счётчика Яндекса (включая webvisor).                    */
+  var METRIKA_ID = 111971624;
 
   function initMetrika() {
     if (!METRIKA_ID) return;               // ID не задан — ничего не грузим
@@ -21,8 +20,12 @@
       for (var j = 0; j < e.scripts.length; j++) { if (e.scripts[j].src === r) return; }
       k = e.createElement(t); a = e.getElementsByTagName(t)[0];
       k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
-    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-    window.ym(METRIKA_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=' + METRIKA_ID, 'ym');
+    window.ym(METRIKA_ID, 'init', {
+      ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer",
+      referrer: document.referrer, url: location.href,
+      accurateTrackBounce: true, trackLinks: true
+    });
   }
 
   /* ---------- Согласие на аналитику ---------- */
