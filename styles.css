@@ -379,3 +379,72 @@ footer{
 .doc strong{font-weight:700;color:var(--ink)}
 .doc .meta{margin-top:38px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .doc .meta p{color:var(--muted);margin:0 0 4px}
+
+/* =========================================================================
+   ТЁМНАЯ ТЕМА — «ночная бумага»
+   Включается автоматически по системной настройке устройства.
+   Всё сделано переопределением переменных и нескольких мест,
+   где цвет был записан прямо в правиле. Светлая тема не тронута.
+   Настройка в одном месте: блок :root ниже.
+   ========================================================================= */
+@media (prefers-color-scheme: dark){
+
+  :root{
+    color-scheme:dark;        /* тёмные скроллбары и системные элементы */
+
+    --ink:#e8e2d6;            /* основной текст */
+    --head:#f3eee3;           /* заголовки — чуть светлее текста */
+    --muted:#a49c8e;
+    --line:#2f2a23;
+    --paper:#191612;          /* фон: тёплый уголь */
+    --paper-rgb:25,22,18;
+    --card:#211d18;           /* меню, плашка cookie */
+    --soft:#2a251e;           /* подсветка пункта меню */
+    --accent:#a58bf0;         /* сиреневый, осветлённый для тёмного фона */
+    --accent-deep:#c0aefa;    /* на тёмном «глубже» = светлее */
+
+    /* приглушённый текст абзацев (в светлой теме это #332f38) */
+    --body-copy:#d8d1c4;
+  }
+
+  /* --- места, где цвет был задан напрямую ------------------------------ */
+  .copy p,
+  .duo p,
+  .history-main p,
+  .history-duo p,
+  .final p,
+  .doc p{color:var(--body-copy)}
+
+  .doc .lede{color:#b8b0a2}
+  .cookie-text{color:#cfc7b9}
+
+  /* --- фото в Hero ------------------------------------------------------ */
+  /* градиенты-растворения берут --paper-rgb и темнеют сами;
+     фотографии слегка убавляем яркость, чтобы не «светила» на тёмном */
+  .hero-photo img{filter:brightness(.88) saturate(.96)}
+
+  /* --- карточки-скриншоты ---------------------------------------------- */
+  .shot{
+    background:var(--card);
+    border-color:rgba(255,255,255,.08);
+    box-shadow:0 18px 46px rgba(0,0,0,.55), 0 2px 6px rgba(0,0,0,.35);
+  }
+  .project:hover .shot,
+  .duo article:hover .shot,
+  .history-main:hover .shot,
+  .history-duo article:hover .shot{
+    box-shadow:0 28px 62px rgba(0,0,0,.65), 0 4px 10px rgba(0,0,0,.4);
+  }
+
+  /* --- меню и оверлеи --------------------------------------------------- */
+  .scrim{background:rgba(0,0,0,.55)}
+  .site-menu{box-shadow:0 24px 70px rgba(0,0,0,.6)}
+  .cookie{box-shadow:0 -14px 50px rgba(0,0,0,.55)}
+
+  /* --- кнопка: на светлом сиреневом нужен тёмный текст ------------------ */
+  .btn-solid{background:var(--accent);color:#191612}
+  .btn-solid:hover{background:var(--accent-deep);color:#191612}
+
+  /* --- «телефоны» в манифесте ------------------------------------------ */
+  .phone{border-color:#3a352c;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+}
