@@ -314,6 +314,10 @@ footer{
   .project .copy,.history-main > div{order:2}
   .duo,.history-duo{grid-template-columns:1fr;gap:var(--gap-proj)}
   .history-duo article{border-top:none;padding-top:0}
+
+  /* подвал: ссылка на политику — отдельной строкой, разделитель убираем */
+  footer .foot-sep{display:none}
+  footer a{display:inline-block;margin-top:8px}
 }
 
 /* мелкая донастройка телефона */
