@@ -317,7 +317,7 @@ footer{
 
   /* подвал: ссылка на политику — отдельной строкой, разделитель убираем */
   footer .foot-sep{display:none}
-  footer a{display:inline-block;margin-top:8px}
+  footer a{display:block;width:fit-content;margin-top:8px}
 }
 
 /* мелкая донастройка телефона */
