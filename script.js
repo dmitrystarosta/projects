@@ -83,7 +83,10 @@
       caption.textContent = labels[0] || '';
 
       var dots = [];
+      var current = 0;
       var show = function (i) {
+        if (i < 0 || i >= frames.length) return;     // без зацикливания
+        current = i;
         frames.forEach(function (img, n) {
           if (n === i && img.dataset.src) {          // ленивая подгрузка
             img.src = img.dataset.src;
@@ -106,6 +109,26 @@
       });
 
       if (labels.length) dotsBox.appendChild(caption);
+
+      /* Свайп пальцем влево-вправо. Слушатели пассивные и ничего не
+         отменяют, поэтому вертикальная прокрутка страницы не страдает:
+         жест засчитывается только если он заметно горизонтальный.     */
+      var frame = box.querySelector('.frame');
+      var x0 = null, y0 = null;
+      frame.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) { x0 = null; return; }
+        x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+      }, { passive: true });
+      frame.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var t = e.changedTouches[0];
+        var dx = t.clientX - x0, dy = t.clientY - y0;
+        x0 = null;
+        if (Math.abs(dx) < 40) return;                // слишком коротко — это тап
+        if (Math.abs(dx) < Math.abs(dy) * 1.5) return; // жест вертикальный — это прокрутка
+        show(current + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+
       box.classList.add('ready');                     // без JS точки скрыты
     });
   });
