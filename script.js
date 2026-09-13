@@ -67,5 +67,46 @@
       if (scrim) scrim.addEventListener('click', function () { setOpen(false); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
     }
+    /* ---------- Переключатель скриншотов (.shot-switch) ----------
+       Работает на любой карточке: берёт все <img> внутри .frame,
+       рисует по точке на кадр и переключает их только по нажатию.
+       Второй и последующие кадры лежат в data-src и подгружаются
+       в момент первого показа — по умолчанию страница их не тянет.   */
+    document.querySelectorAll('.shot-switch').forEach(function (box) {
+      var frames = box.querySelectorAll('.frame img');
+      var dotsBox = box.querySelector('.shot-dots');
+      if (!dotsBox || frames.length < 2) return;
+
+      var labels = (dotsBox.getAttribute('data-labels') || '').split('|');
+      var caption = document.createElement('span');
+      caption.className = 'shot-caption';
+      caption.textContent = labels[0] || '';
+
+      var dots = [];
+      var show = function (i) {
+        frames.forEach(function (img, n) {
+          if (n === i && img.dataset.src) {          // ленивая подгрузка
+            img.src = img.dataset.src;
+            delete img.dataset.src;
+          }
+          img.hidden = n !== i;
+        });
+        dots.forEach(function (d, n) { d.setAttribute('aria-pressed', String(n === i)); });
+        caption.textContent = labels[i] || '';
+      };
+
+      frames.forEach(function (img, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-pressed', String(i === 0));
+        dot.setAttribute('aria-label', labels[i] || ('Кадр ' + (i + 1)));
+        dot.addEventListener('click', function () { show(i); });
+        dotsBox.appendChild(dot);
+        dots.push(dot);
+      });
+
+      if (labels.length) dotsBox.appendChild(caption);
+      box.classList.add('ready');                     // без JS точки скрыты
+    });
   });
 })();
