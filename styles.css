@@ -407,6 +407,10 @@ footer{
 }
 .shot-switch .frame img[hidden]{display:none}
 
+/* кадр с десктопным скриншотом: вписываем целиком, поля закрашиваем
+   цветом темы — иначе широкий снимок обрезался бы по бокам */
+.shot-switch .frame img.wide{object-fit:contain;background:var(--soft)}
+
 .shot-dots{display:none;align-items:center;gap:18px;margin:14px 0 16px}
 .shot-switch.ready .shot-dots{display:flex}
 
